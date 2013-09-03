@@ -1,0 +1,15 @@
+D:\ironbase@163.com\ProjectX\MediaEngine\src\ME.Core\bin\Debug\ME.Core.dll
+D:\ironbase@163.com\ProjectX\MediaEngine\src\ME.Core\bin\Debug\ME.Core.pdb
+D:\ironbase@163.com\ProjectX\MediaEngine\src\ME.Core\obj\Debug\ResolveAssemblyReference.cache
+D:\ironbase@163.com\ProjectX\MediaEngine\src\ME.Core\obj\Debug\ME.Core.dll
+D:\ironbase@163.com\ProjectX\MediaEngine\src\ME.Core\obj\Debug\ME.Core.pdb
+D:\ironbase@163.com\ProjectX\MediaEngine\src\Core\bin\Debug\ME.Core.dll
+D:\ironbase@163.com\ProjectX\MediaEngine\src\Core\bin\Debug\ME.Core.pdb
+D:\ironbase@163.com\ProjectX\MediaEngine\src\Core\obj\Debug\ResolveAssemblyReference.cache
+D:\ironbase@163.com\ProjectX\MediaEngine\src\Core\obj\Debug\ME.Core.dll
+D:\ironbase@163.com\ProjectX\MediaEngine\src\Core\obj\Debug\ME.Core.pdb
+D:\shaynegao@gmail.com\ProjectX\MediaEngine\src\Core\bin\Debug\ME.Core.dll
+D:\shaynegao@gmail.com\ProjectX\MediaEngine\src\Core\bin\Debug\ME.Core.pdb
+D:\shaynegao@gmail.com\ProjectX\MediaEngine\src\Core\obj\Debug\ResolveAssemblyReference.cache
+D:\shaynegao@gmail.com\ProjectX\MediaEngine\src\Core\obj\Debug\ME.Core.dll
+D:\shaynegao@gmail.com\ProjectX\MediaEngine\src\Core\obj\Debug\ME.Core.pdb

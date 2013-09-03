@@ -1,0 +1,18 @@
+﻿@model  LoginModel
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(m => m.UserName, "帐号")
+    @Html.TextBoxFor(m => m.UserName)
+    <br />
+    @Html.LabelFor(m => m.Password, "密码")
+    @Html.PasswordFor(m => m.Password)
+     <br />
+    <input type="submit" value="登录" />
+}

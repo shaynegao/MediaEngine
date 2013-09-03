@@ -1,0 +1,7 @@
+D:\shaynegao@gmail.com\ProjectX\MediaEngine\src\EnterpriseLibrary\bin\Debug\ME.Infrastructure.EnterpriseLibrary.dll
+D:\shaynegao@gmail.com\ProjectX\MediaEngine\src\EnterpriseLibrary\bin\Debug\ME.Infrastructure.EnterpriseLibrary.pdb
+D:\shaynegao@gmail.com\ProjectX\MediaEngine\src\EnterpriseLibrary\obj\Debug\ResolveAssemblyReference.cache
+D:\shaynegao@gmail.com\ProjectX\MediaEngine\src\EnterpriseLibrary\obj\Debug\ME.Infrastructure.EnterpriseLibrary.dll
+D:\shaynegao@gmail.com\ProjectX\MediaEngine\src\EnterpriseLibrary\obj\Debug\ME.Infrastructure.EnterpriseLibrary.pdb
+D:\shaynegao@gmail.com\ProjectX\MediaEngine\src\EnterpriseLibrary\bin\Debug\ME.Core.dll
+D:\shaynegao@gmail.com\ProjectX\MediaEngine\src\EnterpriseLibrary\bin\Debug\ME.Core.pdb
