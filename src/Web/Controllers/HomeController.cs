@@ -10,11 +10,9 @@ namespace ME.Web.Controllers
     [Authorize]
     public class HomeController : Controller
     {
-        private readonly IMediaRepository _mediaRepository;
-
-        public HomeController(IMediaRepository mediaRepository)
+  
+        public HomeController()
         {
-            this._mediaRepository = mediaRepository;
         }
 
         //
@@ -22,8 +20,7 @@ namespace ME.Web.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            var msg = _mediaRepository.GetMessage();
-            ViewBag.Message = msg;
+            ViewBag.Message = "Hello World!";
             return View();
         }
 

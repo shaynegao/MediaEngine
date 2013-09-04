@@ -1,0 +1,5 @@
+D:\shaynegao@gmail.com\ProjectX\MediaEngine\src\EntityFramework\bin\Debug\EntityFramework.dll
+D:\shaynegao@gmail.com\ProjectX\MediaEngine\src\EntityFramework\bin\Debug\EntityFramework.pdb
+D:\shaynegao@gmail.com\ProjectX\MediaEngine\src\EntityFramework\obj\Debug\ResolveAssemblyReference.cache
+D:\shaynegao@gmail.com\ProjectX\MediaEngine\src\EntityFramework\obj\Debug\EntityFramework.dll
+D:\shaynegao@gmail.com\ProjectX\MediaEngine\src\EntityFramework\obj\Debug\EntityFramework.pdb
