@@ -5,11 +5,15 @@ using System.Web;
 using System.Web.Mvc;
 using ME.Web.Models;
 using System.Web.Security;
+using ME.Infrastructure.EF;
 
 namespace ME.Web.Controllers
 {
     public class AccountController : Controller
     {
+        MembershipRepository _repository = new MembershipRepository();
+
+
         [HttpGet]
         public ActionResult Login()
         {
@@ -25,8 +29,9 @@ namespace ME.Web.Controllers
 
             if (ModelState.IsValid)
             {
-                if (Membership.ValidateUser(model.UserName, model.Password))
+                if (_repository.ValidateUser(model.UserName, model.Password))
                 {
+                    FormsAuthentication.SetAuthCookie(model.UserName, false);                
                     return RedirectToAction("Index", "Home");
                 }
                 else 

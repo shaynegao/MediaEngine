@@ -125,13 +125,9 @@
       <Project>{DD2C0678-42EE-40C4-B84E-28FCB68257F3}</Project>
       <Name>ME.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EnterpriseLibrary\ME.Infrastructure.EnterpriseLibrary.csproj">
-      <Project>{5E357FFB-2960-4E88-A4DF-5DF415964A58}</Project>
-      <Name>ME.Infrastructure.EnterpriseLibrary</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Unity\ME.Unity.csproj">
-      <Project>{8BE0D10F-D299-4ABF-8110-B98E439017E1}</Project>
-      <Name>ME.Unity</Name>
+    <ProjectReference Include="..\EntityFramework\ME.Infrastructure.EF.csproj">
+      <Project>{0B204A7B-5532-47C6-B059-FE8E41422F93}</Project>
+      <Name>ME.Infrastructure.EF</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

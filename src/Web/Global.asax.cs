@@ -33,15 +33,15 @@ namespace ME.Web
 
         protected void Application_Start()
         {
-            IoC.InitializeWith(new DependencyResolverFactory());
+     //       IoC.InitializeWith(new DependencyResolverFactory());
 
             AreaRegistration.RegisterAllAreas();
 
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
 
-            var factory = new ControllerFactory();
-            ControllerBuilder.Current.SetControllerFactory(factory);
+            //var factory = new ControllerFactory();
+            //ControllerBuilder.Current.SetControllerFactory(factory);
         }
 
 

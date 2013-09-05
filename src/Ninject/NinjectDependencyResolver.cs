@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using ME.Infrastructure;
-using Ninject.Modules;
+//using Ninject.Modules;
 
 namespace ME.Infrastructure.Ninject
 {
@@ -13,7 +13,7 @@ namespace ME.Infrastructure.Ninject
 
     public class NinjectDependencyResolver : IDependencyResolver
     {
-        private readonly NinjectModule _module;
+   //     private readonly NinjectModule _module;
 
         //public NinjectDependencyResolver(NinjectModule module)
         //{
@@ -29,7 +29,7 @@ namespace ME.Infrastructure.Ninject
 
         public void Register<T>(T instance)
         {
-            _module.Bind<T>();
+            throw new NotImplementedException();
         }
 
         public void Inject<T>(T existing)
