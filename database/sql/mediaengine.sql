@@ -17,6 +17,10 @@ CREATE TABLE [users]
     [created] datetime not null,
     [access]  datetime  null,
     [login]   datetime  null,
+
+    [password_reset_token] UNIQUEIDENTIFIER,
+    [password_reset_expiration] datetime,
+
     [status]  tinyint not null   -- 0 : 锁定  1 : 激活
  )
 
