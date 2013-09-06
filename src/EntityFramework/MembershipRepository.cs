@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using EntityFramework;
-using System.Data.Entity;
 
 namespace ME.Infrastructure.EF
 {
@@ -26,13 +25,14 @@ namespace ME.Infrastructure.EF
         }
 
 
-        public void Add()
+        public void CreateUser(string userName, string password, string email)
         {
             using (var db = new MediaEngineEntities())
             {
                 var user = new user();
-                user.name = "高卫卫";
-                user.password = "111";
+                user.name = userName;
+                user.password = password.Trim().Hash();
+                user.email = email;
                 user.created = DateTime.Now;
 
                 db.users.Add(user);

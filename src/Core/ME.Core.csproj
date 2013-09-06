@@ -44,9 +44,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DomainObjects\IUser.cs" />
+    <Compile Include="Extension\StringExtension.cs" />
     <Compile Include="Helper\CaptchaImage.cs" />
     <Compile Include="Helper\DisposableResource.cs" />
     <Compile Include="Helper\MEAuthorizeAttribute.cs" />
+    <Compile Include="Helper\MEMembershipProvider.cs" />
     <Compile Include="Helper\RandomImage.cs" />
     <Compile Include="Infrastructure\IoC\DependencyResolverFactory.cs" />
     <Compile Include="Infrastructure\IoC\IDependencyResolver.cs" />

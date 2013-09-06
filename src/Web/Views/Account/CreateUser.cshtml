@@ -1,0 +1,22 @@
+﻿@model  CreateUserModel
+
+@{
+    ViewBag.Title = "CreateUser";
+}
+
+<h2>CreateUser</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(m => m.UserName, "姓名")
+    @Html.TextBoxFor(m => m.UserName)
+    <br />
+    @Html.LabelFor(m => m.Password, "公司邮箱")
+    @Html.TextBoxFor(m => m.Email)
+     <br />
+    @Html.LabelFor(m => m.Password, "密码")
+    @Html.PasswordFor(m => m.Password)
+    @Html.ValidationMessageFor(m => m.Password)
+     <br />
+    <input type="submit" value="注册" />
+}

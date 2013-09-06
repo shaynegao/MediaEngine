@@ -13,7 +13,6 @@ namespace ME.Web.Controllers
     {
         MembershipRepository _repository = new MembershipRepository();
 
-
         [HttpGet]
         public ActionResult Login()
         {
@@ -46,6 +45,25 @@ namespace ME.Web.Controllers
             return View(model);
             
         }
+
+        [HttpGet]
+        public ActionResult CreateUser()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CreateUser(CreateUserModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                _repository.CreateUser(model.UserName, model.Password, model.Email);
+                return RedirectToAction("Index", "Home");
+            }
+
+            return View(model);
+        }
+
 
 
     }
