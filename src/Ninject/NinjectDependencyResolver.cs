@@ -37,7 +37,7 @@ namespace ME.Infrastructure.Ninject
 
         public void Inject<T>(T existing)
         {
-            throw new NotImplementedException();
+            kernel.Inject(existing);
         }
 
         public T Resolve<T>(Type type)
