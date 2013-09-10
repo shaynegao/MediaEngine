@@ -11,7 +11,12 @@ namespace ME.Web.Controllers
 {
     public class AccountController : Controller
     {
-        MembershipRepository _repository = new MembershipRepository();
+        private MembershipRepository _repository;
+
+        public AccountController(MembershipRepository membershipRepository)
+        {
+            _repository = membershipRepository;
+        }
 
         [HttpGet]
         public ActionResult Login()

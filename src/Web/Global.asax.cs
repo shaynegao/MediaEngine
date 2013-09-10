@@ -6,6 +6,10 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using ME.Infrastructure;
 using ME.Web.Controllers;
+using Ninject;
+using ME.Infrastructure.Ninject;
+using ME.Core.Repository;
+using ME.Infrastructure.EF;
 
 namespace ME.Web
 {
@@ -35,6 +39,8 @@ namespace ME.Web
         {
      //       IoC.InitializeWith(new DependencyResolverFactory());
 
+            SetupDependencyInjection();
+
             AreaRegistration.RegisterAllAreas();
 
             RegisterGlobalFilters(GlobalFilters.Filters);
@@ -44,6 +50,12 @@ namespace ME.Web
             //ControllerBuilder.Current.SetControllerFactory(factory);
         }
 
+        public void SetupDependencyInjection()
+        {
+            IKernel kernel = new StandardKernel();
+            kernel.Bind<IMembershipRepository>().To<MembershipRepository>();
+            DependencyResolver.SetResolver(new NinjectDependencyResolver(kernel));
+        }
 
     }
 }

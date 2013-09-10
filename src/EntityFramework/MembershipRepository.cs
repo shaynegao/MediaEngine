@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using EntityFramework;
+using ME.Core.Repository;
 
 namespace ME.Infrastructure.EF
 {
-    public class MembershipRepository
+    public class MembershipRepository : IMembershipRepository
     {
 
         public bool ValidateUser(string userName, string password)
