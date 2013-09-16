@@ -70,6 +70,13 @@ namespace ME.Web.Controllers
         }
 
 
+        [ChildActionOnly]
+        public ActionResult Menu()
+        {
+            return PartialView("_Menu");
+        }
+
+
 
     }
 }
