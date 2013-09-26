@@ -10,7 +10,7 @@ namespace ME.Web.Models
     {
         [Required]
         public string UserName { get; set; }
-        [Required(ErrorMessage="必须输入密码")]
+        [Required]
         public string Password { get; set; }
         [Required]
         public string Email { get; set; }

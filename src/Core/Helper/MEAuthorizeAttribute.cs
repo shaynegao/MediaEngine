@@ -18,12 +18,23 @@ namespace ME.Core.Helper
             }
 
             IPrincipal user = httpContext.User;
-            if (!user.Identity.IsAuthenticated)
+            if (user == null || !user.Identity.IsAuthenticated)
             {
                 return false;
             }
 
             // 1.current visit page  ==> can view roles
+
+            var x = httpContext.Handler.GetType();
+
+
+            var requestContext = httpContext.Request.RequestContext;
+            //string controller = requestContext.RouteData.GetRequiredString("controller");
+            //string action = requestContext.RouteData.GetRequiredString("action");
+
+            //var urlHelper = new UrlHelper(requestContext);
+            //var url = urlHelper.Action(action, controller, requestContext.RouteData.Values);
+
 
             // 2.user's role
 
@@ -39,10 +50,8 @@ namespace ME.Core.Helper
             //    return false;
             //}
 
-            return false;
+            return true;
         }
-
-
 
         protected override void HandleUnauthorizedRequest(AuthorizationContext filterContext)
         {

@@ -14,9 +14,9 @@ namespace ME.Infrastructure.EF
         {
             using (var db = new MediaEngineEntities())
             {
-           //     Database.SetInitializer<MediaEngineEntities>(null);
+                string encrpted = password.Trim().Hash();
 
-                var n = db.users.Count(t => t.name == userName && t.password == password);
+                var n = db.users.Count(t => t.name == userName && t.password == encrpted);
 
                 if (n == 0) 
                     return false;

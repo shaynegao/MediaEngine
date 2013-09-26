@@ -35,17 +35,18 @@ namespace ME.Web.Controllers
             {
                 if (_repository.ValidateUser(model.UserName, model.Password))
                 {
-                    FormsAuthentication.SetAuthCookie(model.UserName, false);                
-                    return RedirectToAction("Index", "Home");
+                    FormsAuthentication.SetAuthCookie(model.UserName, false);  
+              
+                    if (string.IsNullOrWhiteSpace(returnUrl))
+                        return RedirectToAction("Index", "Home");
+                    else
+                        return Redirect(returnUrl);
                 }
                 else 
                 {
                     ModelState.AddModelError("", "The user name or password provided is incorrect.");
                 }
-
-                return Redirect(returnUrl);
             }
-
 
             return View(model);
             
