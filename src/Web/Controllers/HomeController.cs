@@ -3,16 +3,16 @@ using ME.Core.Helper;
 
 namespace ME.Web.Controllers
 {
-    [MEAuthorize]
+    
     public class HomeController : Controller
     {
-  
         public HomeController()
         {
         }
 
         //
         // GET: /Home/
+        [MEAuthorize]
         [HttpGet]
         public ActionResult Index()
         {
@@ -20,5 +20,18 @@ namespace ME.Web.Controllers
             return View();
         }
 
+        [MEAuthorize]
+        [HttpGet]
+        public ActionResult Index2()
+        {
+            ViewBag.Message = "blah blah!";
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult NoAccess()
+        {
+            return View();
+        }
     }
 }

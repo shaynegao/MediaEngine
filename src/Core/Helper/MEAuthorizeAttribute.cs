@@ -18,17 +18,21 @@ namespace ME.Core.Helper
             }
 
             IPrincipal user = httpContext.User;
-            if (user == null || !user.Identity.IsAuthenticated)
+            if (!user.Identity.IsAuthenticated)
             {
                 return false;
             }
 
-            // 1.current visit page  ==> can view roles
+            var controllerType = httpContext.Session["ControllerType"] != null ? httpContext.Session["ControllerType"].ToString() : "";
+            var actionName = httpContext.Session["ActionName"] != null ? httpContext.Session["ActionName"].ToString() : "";
 
-            var x = httpContext.Handler.GetType();
 
+            if (string.IsNullOrEmpty(controllerType) ||
+                string.IsNullOrEmpty(actionName))
+            {
+                return false;
+            }
 
-            var requestContext = httpContext.Request.RequestContext;
             //string controller = requestContext.RouteData.GetRequiredString("controller");
             //string action = requestContext.RouteData.GetRequiredString("action");
 
@@ -53,15 +57,30 @@ namespace ME.Core.Helper
             return true;
         }
 
+        public override void OnAuthorization(AuthorizationContext filterContext)
+        {
+            if (filterContext.HttpContext.User.Identity.IsAuthenticated)
+            {
+                var actionDescriptor = filterContext.ActionDescriptor;
+                string controllerType = actionDescriptor.ControllerDescriptor.ControllerType.ToString();
+                string actionName = actionDescriptor.ActionName;
+
+                filterContext.HttpContext.Session["ControllerType"] = controllerType;
+                filterContext.HttpContext.Session["actionName"] = actionName;
+
+            }
+
+            base.OnAuthorization(filterContext);
+            
+        }
+
+
         protected override void HandleUnauthorizedRequest(AuthorizationContext filterContext)
         {
-            //if (!filterContext.HttpContext.User.Identity.IsAuthenticated)
-            //{ 
-            //    filterContext.Result = 
-            //}
-
-
-            base.HandleUnauthorizedRequest(filterContext);
+            if (filterContext.HttpContext.User.Identity.IsAuthenticated)
+                filterContext.Result = new RedirectResult(@"~\Home\NoAccess");
+            else
+                base.HandleUnauthorizedRequest(filterContext);
         }
 
     }

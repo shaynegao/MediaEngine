@@ -16,7 +16,7 @@ namespace ME.Infrastructure.EF
             {
                 string encrpted = password.Trim().Hash();
 
-                var n = db.users.Count(t => t.name == userName && t.password == encrpted);
+                var n = db.users.Count(t => t.email == userName && t.password == encrpted);
 
                 if (n == 0) 
                     return false;
