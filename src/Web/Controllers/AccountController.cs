@@ -33,6 +33,14 @@ namespace ME.Web.Controllers
 
             if (ModelState.IsValid)
             {
+
+                // 如果UserName 是email,就用FetchUserByEmail的方式
+                // 如果UserName 是工号,就用FetchUserBy工号的方式
+                // 找到进行对比，超过次数进行锁定
+                // 找不到对应用户可以继续尝试
+
+
+
                 if (_repository.ValidateUser(model.UserName, model.Password))
                 {
                     FormsAuthentication.SetAuthCookie(model.UserName, false);  

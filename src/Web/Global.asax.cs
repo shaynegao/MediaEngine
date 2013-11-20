@@ -28,6 +28,18 @@ namespace ME.Web
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                "Login",
+                "login",
+                 new { controller = "Account", action = "Login" }
+            );
+
+            routes.MapRoute(
+                "Logout",
+                "logout",
+                 new { controller = "Account", action = "Logout" }
+            );
+
+            routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
                 new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
