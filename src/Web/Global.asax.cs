@@ -66,6 +66,7 @@ namespace ME.Web
         {
             IKernel kernel = new StandardKernel();
      //       kernel.Bind<IMembershipRepository>().To<MembershipRepository>();
+
             DependencyResolver.SetResolver(new NinjectDependencyResolver(kernel));
         }
 

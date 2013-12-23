@@ -12,6 +12,7 @@ namespace ME.Web.Controllers
     {
         protected override IController GetControllerInstance(RequestContext requestContext, Type controllerType)
         {
+            
             return controllerType == null
                 ? base.GetControllerInstance(requestContext, controllerType)
                 : IoC.Resolve<IController>(controllerType);
