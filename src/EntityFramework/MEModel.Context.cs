@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EntityFramework
+namespace ME.EF
 {
     using System;
     using System.Data.Entity;

@@ -22,5 +22,19 @@ namespace ME.Infrastructure.EnterpriseLibrary.Repository
         }
 
         #endregion
+
+        #region IUserRepository 成员
+
+        public IUser GetUserByUserName(string userName)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IUser GetUserByEmail(string email)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
     }
 }

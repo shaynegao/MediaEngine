@@ -8,7 +8,7 @@
     <ProjectGuid>{0B204A7B-5532-47C6-B059-FE8E41422F93}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EntityFramework</RootNamespace>
+    <RootNamespace>ME.EF</RootNamespace>
     <AssemblyName>ME.Infrastructure.EF</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DomainObjects\User.cs" />
     <Compile Include="MembershipRepository.cs" />
     <Compile Include="ME.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -65,6 +66,8 @@
       <DependentUpon>MEModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\Database\IDatabase.cs" />
+    <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="user.cs">
       <DependentUpon>MEModel.tt</DependentUpon>
     </Compile>
@@ -74,6 +77,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ME.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="App.Config" />
     <None Include="MEModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>MEModel.Context.cs</LastGenOutput>
@@ -93,6 +97,7 @@
       <Name>ME.Core</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

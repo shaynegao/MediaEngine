@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 //using ME.Infrastructure;
 using Ninject;
+using Ninject.Syntax;
 
 namespace ME.Infrastructure.Ninject
 {
@@ -19,66 +20,6 @@ namespace ME.Infrastructure.Ninject
         {
             _kernel = kernel;
         }
-
-        //public NinjectDependencyResolver(NinjectModule module)
-        //{
-        //    _module = module;
-        //}
-       
-
-        //public NinjectDependencyResolver() : this(new NinjectModule())
-        //{
-
-        //}
-
-        #region IDependencyResolver 成员
-
-        public void Register<T>(T instance)
-        {
-            //kernel.Bind<T>().ToConstant<T>(instance);
-            _kernel.Bind<T>().ToMethod(context => instance).InSingletonScope();
-        }
-
-        public void Inject<T>(T existing)
-        {
-            _kernel.Inject(existing);
-        }
-
-        public T Resolve<T>(Type type)
-        {
-            throw new NotImplementedException();
-        }
-
-        public T Resolve<T>(Type type, string name)
-        {
-            throw new NotImplementedException();
-        }
-
-        public T Resolve<T>()
-        {
-            throw new NotImplementedException();
-        }
-
-        public T Resolve<T>(string name)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<T> ResolveAll<T>()
-        {
-            throw new NotImplementedException();
-        }
-
-        #endregion
-
-        #region IDisposable 成员
-
-        public void Dispose()
-        {
-            throw new NotImplementedException();
-        }
-
-        #endregion
 
         #region IDependencyResolver 成员
 
@@ -97,6 +38,7 @@ namespace ME.Infrastructure.Ninject
             {
                 return new List<object>();
             }
+            
         }
 
         #endregion

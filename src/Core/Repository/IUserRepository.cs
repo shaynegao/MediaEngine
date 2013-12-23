@@ -9,6 +9,8 @@ namespace ME.Repository
     public interface IUserRepository : IRepository<IUser>
     {
 
+        IUser FindByUserName(string userName);
 
+        IUser FindByEmail(string email);
     }
 }

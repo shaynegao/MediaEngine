@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="MediaEngineModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="MediaEngineModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="MediaEngineModelStoreContainer">
           <EntitySet Name="users" EntityType="MediaEngineModel.Store.users" store:Type="Tables" Schema="dbo" />
         </EntityContainer>
@@ -16,13 +16,15 @@
           <Property Name="name" Type="varchar" Nullable="false" MaxLength="60" />
           <Property Name="password" Type="varchar" Nullable="false" MaxLength="100" />
           <Property Name="email" Type="varchar" MaxLength="100" />
+          <Property Name="employee_number" Type="varchar" Nullable="false" MaxLength="100" />
           <Property Name="created" Type="datetime" Nullable="false" />
           <Property Name="access" Type="datetime" />
           <Property Name="login" Type="datetime" />
+          <Property Name="password_reset_token" Type="varchar" MaxLength="36" />
+          <Property Name="password_reset_expiration" Type="datetime" />
           <Property Name="status" Type="tinyint" Nullable="false" />
         </EntityType>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MediaEngineModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
@@ -41,6 +43,9 @@
           <Property Name="access" Type="DateTime" />
           <Property Name="login" Type="DateTime" />
           <Property Name="status" Type="Byte" Nullable="false" />
+          <Property Type="String" Name="employee_number" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="password_reset_token" MaxLength="36" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="password_reset_expiration" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -49,7 +54,10 @@
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="MediaEngineModelStoreContainer" CdmEntityContainer="MediaEngineEntities">
           <EntitySetMapping Name="users"><EntityTypeMapping TypeName="MediaEngineModel.user"><MappingFragment StoreEntitySet="users">
-            <ScalarProperty Name="uid" ColumnName="uid" />
+            <ScalarProperty Name="password_reset_expiration" ColumnName="password_reset_expiration" />
+                <ScalarProperty Name="password_reset_token" ColumnName="password_reset_token" />
+                <ScalarProperty Name="employee_number" ColumnName="employee_number" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
             <ScalarProperty Name="name" ColumnName="name" />
             <ScalarProperty Name="password" ColumnName="password" />
             <ScalarProperty Name="email" ColumnName="email" />
@@ -66,7 +74,7 @@
   <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
     <Connection>
       <DesignerInfoPropertySet>
-        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="CopyToOutputDirectory" />
       </DesignerInfoPropertySet>
     </Connection>
     <Options>
@@ -80,7 +88,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
       <Diagram Name="ME">
-        <EntityTypeShape EntityType="MediaEngineModel.user" Width="1.5" PointX="0.875" PointY="0.75" Height="2.5430916341145835" IsExpanded="true" />
+        <EntityTypeShape EntityType="MediaEngineModel.user" Width="1.5" PointX="1.125" PointY="0.5" Height="3.1161507161458331" IsExpanded="true" />
       </Diagram>
     </Diagrams>
   </Designer>

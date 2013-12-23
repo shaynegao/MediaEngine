@@ -7,8 +7,8 @@ namespace ME.Core.Repository
 {
     public interface IMembershipRepository
     {
-        void CreateUser(string userName, string password, string email);
+        //void CreateUser(string userName, string employeeNumber, string password, string email);
 
-        bool ValidateUser(string userName, string password);
+        //bool ValidateUser(string userName, string password);
     }
 }

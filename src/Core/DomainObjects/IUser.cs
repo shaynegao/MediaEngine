@@ -11,5 +11,9 @@ namespace ME.DomainObjects
 
         string Password { get; }
 
+        string EmployeeNumber { get; }
+
+        string Email { get; }
+
     }
 }

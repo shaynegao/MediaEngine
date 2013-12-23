@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EntityFramework
+namespace ME.EF
 {
     using System;
     using System.Collections.Generic;
@@ -22,5 +22,8 @@ namespace EntityFramework
         public Nullable<System.DateTime> access { get; set; }
         public Nullable<System.DateTime> login { get; set; }
         public byte status { get; set; }
+        public string employee_number { get; set; }
+        public string password_reset_token { get; set; }
+        public Nullable<System.DateTime> password_reset_expiration { get; set; }
     }
 }
