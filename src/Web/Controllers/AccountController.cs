@@ -5,18 +5,20 @@ using System.Web;
 using System.Web.Mvc;
 using ME.Web.Models;
 using System.Web.Security;
-using ME.Infrastructure.EF;
+using ME.Repository;
+
 
 namespace ME.Web.Controllers
 {
     public class AccountController : Controller
     {
-        private MembershipRepository _repository;
+        private IUserRepository _repository;
 
-        public AccountController(MembershipRepository membershipRepository)
+        public AccountController(IUserRepository userRepository)
         {
-            _repository = membershipRepository;
+            _repository = userRepository;
         }
+
 
         [HttpGet]
         public ActionResult Login()
@@ -41,19 +43,19 @@ namespace ME.Web.Controllers
 
 
 
-                if (_repository.ValidateUser(model.UserName, model.Password))
-                {
-                    FormsAuthentication.SetAuthCookie(model.UserName, false);  
+                //if (_repository.ValidateUser(model.UserName, model.Password))
+                //{
+                //    FormsAuthentication.SetAuthCookie(model.UserName, false);  
               
-                    if (string.IsNullOrWhiteSpace(returnUrl))
-                        return RedirectToAction("Index", "Home");
-                    else
-                        return Redirect(returnUrl);
-                }
-                else 
-                {
-                    ModelState.AddModelError("", "The user name or password provided is incorrect.");
-                }
+                //    if (string.IsNullOrWhiteSpace(returnUrl))
+                //        return RedirectToAction("Index", "Home");
+                //    else
+                //        return Redirect(returnUrl);
+                //}
+                //else 
+                //{
+                //    ModelState.AddModelError("", "The user name or password provided is incorrect.");
+                //}
             }
 
             return View(model);
@@ -71,7 +73,7 @@ namespace ME.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                _repository.CreateUser(model.UserName, model.Password, model.Email);
+            //    _repository.CreateUser(model.UserName, model.Password, model.Email);
                 return RedirectToAction("Index", "Home");
             }
 

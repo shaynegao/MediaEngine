@@ -9,7 +9,7 @@ using ME.Web.Controllers;
 using Ninject;
 using ME.Infrastructure.Ninject;
 using ME.Core.Repository;
-using ME.Infrastructure.EF;
+
 
 namespace ME.Web
 {
@@ -65,7 +65,7 @@ namespace ME.Web
         public void SetupDependencyInjection()
         {
             IKernel kernel = new StandardKernel();
-            kernel.Bind<IMembershipRepository>().To<MembershipRepository>();
+     //       kernel.Bind<IMembershipRepository>().To<MembershipRepository>();
             DependencyResolver.SetResolver(new NinjectDependencyResolver(kernel));
         }
 

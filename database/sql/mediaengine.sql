@@ -15,20 +15,18 @@ CREATE TABLE [users]
     [name] VARCHAR(60) NOT NULL,
     [password]  varchar(100) not null,
     [email]     varchar(100) null,
-    [job_number]     varchar(100) null,  -- 工号
+    [employee_number]     varchar(100) not null,  -- 工号
     [created] datetime not null,
     [access]  datetime  null,
     [login]   datetime  null,
 
-    [password_reset_token] UNIQUEIDENTIFIER,
+    [password_reset_token] varchar(36),
     [password_reset_expiration] datetime,
 
     [status]  tinyint not null   -- 0 : 锁定  1 : 激活
  )
 
-create unique nonclustered index idx_users_job_number on dbo.users(job_number)
-where job_number is not null;
-
+create unique nonclustered index idx_users_employee_number on dbo.users(employee_number)
 
 CREATE TABLE menu_links 
 (
