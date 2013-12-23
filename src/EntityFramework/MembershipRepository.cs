@@ -10,6 +10,12 @@ namespace ME.Infrastructure.EF
     public class MembershipRepository : IMembershipRepository
     {
 
+        public MembershipRepository()
+        {
+            int i = 1;
+        }
+
+
         public bool ValidateUser(string userName, string password)
         {
             using (var db = new MediaEngineEntities())

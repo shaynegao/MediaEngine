@@ -57,9 +57,6 @@ namespace ME.Web
 
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
-
-            //var factory = new ControllerFactory();
-            //ControllerBuilder.Current.SetControllerFactory(factory);
         }
 
         public void SetupDependencyInjection()
