@@ -6,17 +6,18 @@ using System.Web.Mvc;
 using ME.Web.Models;
 using System.Web.Security;
 using ME.Repository;
+using ME.Core.Repository;
 
 
 namespace ME.Web.Controllers
 {
     public class AccountController : Controller
     {
-        private IUserRepository _repository;
+        private IMembershipRepository _repository;
 
-        public AccountController(IUserRepository userRepository)
+        public AccountController(IMembershipRepository membershipRepository)
         {
-            _repository = userRepository;
+            _repository = membershipRepository;
         }
 
 

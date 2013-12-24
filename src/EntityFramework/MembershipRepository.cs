@@ -25,7 +25,7 @@ namespace ME.Infrastructure.EF
         }
 
 
-        public void CreateUser(string userName, string password, string email)
+        public void CreateUser(string userName, string employeeNumber, string password, string email)
         {
             using (var db = new MediaEngineEntities())
             {
